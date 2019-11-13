@@ -1,7 +1,12 @@
 
 /* Portrait / phone */
 @media screen{
-    body{padding:0px;margin: 0px;}
+    body{
+        padding:0px;margin: 0px;
+        background-position: fixed;
+        background-size: cover;
+        background-image: url('../img/placeholder.webp');
+    }
 }
 
 /*    <--  Landscape layout / Standard (with min-width) -->     */
@@ -14,7 +19,7 @@
         width: 30vw;
         height: 80vh;
         border-radius: 3vh;
-        box-shadow: 0vw 0vw 10vw 0vw #ffffff, 0vw 0vw 100vw 0vw #000000;
+        box-shadow: 0vw 0vw 10vw 0vw #000000;
         background-color: #303030;
     }
     #logo{
