@@ -9,7 +9,6 @@ window.addEventListener('load',()=>{
 function close_loading(){
     document.getElementById('page_shade').style.backgroundColor="rgba(0,0,0,0)";
     setTimeout(()=>{
-        document.getElementById('login_screen').style.transform="translate(0,105vh)";
         document.getElementById('page_shade').style.display="none";
     },1000);
 }

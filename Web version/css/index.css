@@ -1,11 +1,8 @@
-@keyframes bobber{
-    0%{transform:translate(0,0vh)}
-    50%{transform:translate(0,120vh)}
-    75%{transform:translate(0,100vh)}
-    100%{transform:translate(0,105vh)}
-}
+
 body{
-    padding:0px;margin: 0px;
+    position: relative;
+    display: block;
+    margin: 0;
     background-attachment: fixed;
     background-size: cover;
     background-image: url('../img/placeholder.webp');
@@ -25,21 +22,16 @@ body{
 @media screen and (min-aspect-ratio: 1/1) and (min-width:700px) {
 
     #login_screen{
-        /*position: relative;
+        position: relative;
         margin-right: auto;
-        margin-left: auto;*/
-        position: fixed;
-        top: -100vh;
-        right:35vw;
+        margin-left: auto;
+        margin-top: 5vh;
         width: 60vh;
         height: 90vh;
         border-radius: 3vh;
         box-shadow: 0vw 0vw 10vw 0vw #000000;
         background-color: #303030;
         padding-top:1px;
-        animation: bobber 1s linear;
-        /*transition: transform 400ms;
-        transform:translate(0,105vh)*/
     }
     #logo{
         position: relative;
@@ -110,7 +102,7 @@ body{
         margin-left: auto;
         margin-bottom:2vh;
         font-size: 3vh;
-        width: 90%;
+        width: 85%;
         height: 5vh;
         padding: 1vh 1.3vh;
         border:0.4vh solid #1F2325;
