@@ -1,28 +1,45 @@
-
-/* Portrait / phone */
-@media screen{
-    body{
-        padding:0px;margin: 0px;
-        background-attachment: fixed;
-        background-size: cover;
-        background-image: url('../img/placeholder.webp');
-    }
-
+@keyframes bobber{
+    0%{transform:translate(0,0vh)}
+    50%{transform:translate(0,120vh)}
+    75%{transform:translate(0,100vh)}
+    100%{transform:translate(0,105vh)}
 }
+body{
+    padding:0px;margin: 0px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url('../img/placeholder.webp');
+}
+#page_shade{
+    position: fixed;
+    top:0;
+    right:0;
+    width: 100%;
+    height:100%;
+    background-color: rgba(0,0,0,1);
+    transition: background-color 1s;
+}
+
 
 /*    <--  Landscape layout / Standard (with min-width) -->     */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:700px) {
 
     #login_screen{
-        margin-top: 5vh;
+        /*position: relative;
         margin-right: auto;
-        margin-left: auto;
+        margin-left: auto;*/
+        position: fixed;
+        top: -100vh;
+        right:35vw;
         width: 60vh;
         height: 90vh;
         border-radius: 3vh;
         box-shadow: 0vw 0vw 10vw 0vw #000000;
         background-color: #303030;
         padding-top:1px;
+        animation: bobber 1s linear;
+        /*transition: transform 400ms;
+        transform:translate(0,105vh)*/
     }
     #logo{
         position: relative;
