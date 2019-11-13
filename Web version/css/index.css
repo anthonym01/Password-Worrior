@@ -9,11 +9,55 @@
 
     #login_screen{
         position: fixed;
-        top:0;
-        right:30vw;
-        width: 40vw;
-        height:100vh;
-        box-shadow: 0vw 0vw 5vw 0vw #ffffff,0vw 0vw 50vw 0vw #000000;
+        top: 5vw;
+        right: 35vw;
+        width: 30vw;
+        height: 40vw;
+        border-radius: 1vw;
+        box-shadow: 0vw 0vw 10vw 0vw #ffffff, 0vw 0vw 100vw 0vw #000000;
+        background-color: #303030;
     }
-    
+    #logo{
+        position: relative;
+        margin-left:auto;
+        margin-right: auto;
+        margin-top: 1vh;
+        width: 12vw;
+        height: 12vw;
+        background-position: fixed;
+        background-size: cover;
+        background-image: url('../img/password\ worrior\ icon\ prototype.webp');
+    }
+    #logo_text{
+        position: relative;
+        width:100%;
+        text-align: center;
+        font-size: 1.7vw;
+        color: #ffffff;
+        margin-bottom: 1vh;
+    }
+
+    .label{
+        position: relative;
+        margin-left:1.5vw;
+        width:100%;
+        text-align: left;
+        font-size: 1.7vw;
+        color: #ffffff;
+    }
+    .login_put{
+        position: relative;
+        color: white;
+        margin-right: 1.5vw;
+        margin-left: 1.5vw;
+        margin-bottom:3vh;
+        font-size: 2vw;
+        width: 26vw;
+        height: 3vw;
+        padding: 0.5vw 0.5vw;
+        background-color: #1F2325;
+        border: none;
+        border-radius: 3px;
+    }
+
 }
