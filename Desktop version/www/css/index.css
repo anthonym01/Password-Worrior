@@ -13,12 +13,4 @@
         padding:0px;
         margin:0px;
     }
-    #login_screen{
-        position: fixed;
-        top:0;
-        right:30vw;
-        width: 40vw;
-        height:100vh;
-        box-shadow: 0vw 0vw 5vw 0vw #ffffff,0vw 0vw 50vw 0vw #000000;
-    }
 }
