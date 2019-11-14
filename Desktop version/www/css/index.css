@@ -1,3 +1,8 @@
+@font-face{src:url('https://fonts.googleapis.com/css?family=Roboto&display=swap'); font-family: 'Roboto', sans-serif;}/* Roboto font */
+@font-face{src:url(../fonts/handwriting-black-draft_DEMO.otf); font-family: handwriting;}/* Handwriting font */
+@font-face{src:url(../fonts/Minecrafter.Reg.ttf); font-family: minecraft;}/* Minecraft clean font */
+@font-face{src:url(../fonts/Minecrafter.Alt.ttf); font-family: minecraft_cracked;}/* Minecraft cracked font */
+
 /*    <--  Portrait layout -->     */
 @media screen{
     body{
@@ -6,11 +11,7 @@
     }
 }
 
-
 /*    <--  Landscape layout (with min-width) -->     */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    body{
-        padding:0px;
-        margin:0px;
-    }
+
 }
