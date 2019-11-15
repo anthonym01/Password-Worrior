@@ -12,7 +12,27 @@
     <title>Password Worrior</title>
 </head>
 <body>
-    
+    <div id="page_shade"></div>
+    <div id="login_screen">
+        <div id="logo"></div>
+        <div id="logo_text">
+            The battle begins
+        </div>
+        <div class="swap_container">
+            <div class="swapbox"><button class="swapbtn_active" id="login_btn">Log in</button></div>
+            <div class="swapbox"><button class="swapbtn" id="signup_btn">Sign up</button></div>
+        </div>
+        <form>
+            <div class="label" id="email_label">Email:</div>
+            <div class="login_put_container" id="login_put_container">
+                <input type="text" class="login_put" id="email_put" name="password_warrior_email">
+            </div>
+            <div class="label" id="password_label">Password:</div>
+            <div class="login_put_container" id="login_put_container">
+                <input type="password" class="login_put" id="password_put" name="password_warrior_password">
+            </div>
+        </form>
+    </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </body>

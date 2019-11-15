@@ -1,11 +1,12 @@
 * {-webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */}
+@font-face{src:url('https://fonts.googleapis.com/css?family=Roboto&display=swap'); font-family: 'Roboto', sans-serif;}/* Roboto font */
+@font-face{src:url(../fonts/handwriting-black-draft_DEMO.otf); font-family: handwriting;}/* Handwriting font */
+@font-face{src:url(../fonts/Minecrafter.Reg.ttf); font-family: minecraft;}/* Minecraft clean font */
+@font-face{src:url(../fonts/Minecrafter.Alt.ttf); font-family: minecraft_cracked;}/* Minecraft cracked font */
 
 /*    <--  Portrait layout -->     */
 @media screen{
     body {
-        top:0;
-        left:0;
-        position: fixed;
         -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
         -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
         -webkit-user-select: text;                  /* prevent copy paste, to allow, change 'none' to 'text' */
@@ -16,25 +17,127 @@
         padding:0px;                                /* Padding to avoid the "unsafe" areas behind notches in the screen */
         padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-right, 0px);
         width:100vw;
-    }
-
-}
-
-/*    <--  Landscape layout (with min-width) -->     */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    body {
-        top:0;
-        left:0;
-        position: fixed;
-        -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-        -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-        -webkit-user-select: text;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-        background-color:rgb(255, 255, 255);
-        font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-        height:100vh;
-        margin:0px;
-        padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-right, 0px);
-        width:100vw;
+        font-family: 'Roboto', sans-serif;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        background-image: url('../img/placeholder.webp');
     }
     
+    #page_shade{
+        position: fixed;
+        top:0;
+        right:0;
+        width: 100%;
+        height:100%;
+        background-color: rgba(0,0,0,1);
+        transition: background-color 1s;
+        z-index: 999;
+    }
+
+    #login_screen{
+        position: relative;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 0vh;
+        width: 100vw;
+        height: calc(100vh - 2px);
+        border-radius: 0vh;
+        box-shadow: 0vw 0vw 10vw 0vw #000000;
+        background-color: rgba(48, 48, 48,0.7);
+        padding-top:1px;
+        transition:height 200ms,width 200ms,background-color 200ms,margin 200ms,border-radius 200ms;
+    }
+    #logo{
+        position: relative;
+        margin-left:auto;
+        margin-right: auto;
+        margin-top: 5vh;
+        width: 27vh;
+        height: 27vh;
+        background-position: fixed;
+        background-size: cover;
+        background-image: url('../img/password\ worrior\ icon\ prototype.webp');
+    }
+    #logo_text{
+        position: relative;
+        width:100%;
+        text-align: center;
+        font-size: 4vh;
+        color: #ffffff;
+        margin-bottom: 1vh;
+    }
+    .swap_container{
+        position: relative;
+        display: flex;
+        width:100%;
+        height:4vh;
+        font-size: 2.5vh;
+        margin-bottom: 2vh;
+    }
+    .swapbox{width:50%;height:100%;font-size: inherit;}
+    .swapbtn{
+        height:100%;
+        width:40%;
+        font-size: inherit;
+        background-color: rgb(78, 78, 78);
+        color: rgb(133, 133, 133);
+        border:none;
+        cursor: pointer;
+        text-align: center;
+        
+    }
+    .swapbtn_active{
+        height:100%;
+        width:40%;
+        font-size: inherit;
+        background-color: rgb(116, 116, 116);
+        color: rgb(255, 255, 255);
+        border:none;
+        cursor: pointer;
+        text-align: center;
+        
+    }
+    #login_btn{ float: right;border-radius: 1.2vh 0vh 0vh 1.2vh;}
+    #signup_btn{ float: left;border-radius: 0vh 1.2vh 1.2vh 0vh;}
+    
+    .label{
+        position: relative;
+        margin-left:0;
+        width:100%;
+        text-align: center;
+        font-size: 3.5vh;
+        color: #ffffff;
+        margin-bottom: 0.5vh;
+    }
+    .login_put_container{
+        position: relative;
+        color: white;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom:2vh;
+        font-size: 3vh;
+        width: 85%;
+        height: 5vh;
+        padding: 1vh 1.3vh;
+        border:0.4vh solid #1F2325;
+        background-color: #1F2325;
+        border: none;
+        border-radius: 1vh;
+    }
+    .login_put{
+        position: relative;
+        color: white;
+        font-size: 3vh;
+        width: 100%;
+        height: 100%;
+        background-color: #1F2325;
+        background:none;
+        border:none;
+    }.login_put:focus{outline: none;}
+}
+
+/*    <--  Landscape layout / Standard (with min-width) -->     */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+
 }

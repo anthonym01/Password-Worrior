@@ -70,12 +70,15 @@ var app = {// Application Constructor
 
 
 window.addEventListener('load',function(){//applictaion needs to be constructed first
-    if(localStorage.getItem("APPNAME_cfg")){
+    if(localStorage.getItem("passwordwarrior_cfg")){
         config.load();
         config.data.usecount++;
     }else{
         config.validate();
     }
+    document.getElementById('email_put').focus();
+    login.initalize();
+    close_loading();
 });
 
 var config = {//Configuration handler
@@ -83,12 +86,12 @@ var config = {//Configuration handler
         usecount:0,
     },
     save:function(){//Save the config file
-        localStorage.setItem("APPNAME_cfg",JSON.stringify(config.data));
+        localStorage.setItem("passwordwarrior_cfg",JSON.stringify(config.data));
         console.log('config saved: ');
         console.table(config.data);
     },
     load:function(){//Load the config file into memory
-        config.data=JSON.parse(localStorage.getItem("APPNAME_cfg"));
+        config.data=JSON.parse(localStorage.getItem("passwordwarrior_cfg"));
         console.log('config Loaded: ');
         console.table(config.data);
         this.validate();
@@ -114,9 +117,29 @@ var config = {//Configuration handler
         }else{console.log('config was found to be valid');}
     },
     delete:function(){//Does not delete the file itself. Just sets it to empty
-        localStorage.clear("APPNAME_cfg");
+        localStorage.clear("passwordwarrior_cfg");
         console.log('config deleted: ');
         console.table(config.data);
         this.validate();
     }
+}
+
+function close_loading(){
+    document.getElementById('page_shade').style.backgroundColor="rgba(0,0,0,0)";
+    setTimeout(()=>{
+        document.getElementById('page_shade').style.display="none";
+    },1000);
+}
+
+let login = {
+    initalize:function(){
+        document.getElementById('login_btn').addEventListener('click',()=>{
+            document.getElementById('login_btn').className="swapbtn_active";
+            document.getElementById('signup_btn').className="swapbtn";
+        });
+        document.getElementById('signup_btn').addEventListener('click',()=>{
+            document.getElementById('login_btn').className="swapbtn";
+            document.getElementById('signup_btn').className="swapbtn_active";
+        });
+    },
 }
