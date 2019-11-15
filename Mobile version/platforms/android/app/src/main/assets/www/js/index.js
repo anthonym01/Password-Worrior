@@ -68,7 +68,6 @@ var app = {// Application Constructor
     },
 };app.initialize();
 
-
 window.addEventListener('load',function(){//applictaion needs to be constructed first
     if(localStorage.getItem("passwordwarrior_cfg")){
         config.load();
@@ -76,14 +75,19 @@ window.addEventListener('load',function(){//applictaion needs to be constructed 
     }else{
         config.validate();
     }
-    document.getElementById('email_put').focus();
-    login.initalize();
+    if(config.data.first_use==true){//show first time settup
+        document.getElementById('Setup_container').style.display='block';
+        document.getElementById('decsion_screen').style.display='block';
+    }else{//show user/password pannel
+
+    }
+    UI.initalize();
     close_loading();
 });
 
 var config = {//Configuration handler
     data:{
-        usecount:0,
+        first_use:true,
     },
     save:function(){//Save the config file
         localStorage.setItem("passwordwarrior_cfg",JSON.stringify(config.data));
@@ -99,16 +103,10 @@ var config = {//Configuration handler
     validate:function(){//validate configuration file
         console.log('Config is being validated');
         var configisvalid = true;
-        if(typeof(this.data.usecount)!='undefined'){
-            if(this.data.usecount==undefined || this.data.usecount<0){
-                this.data.usecount=1;
-                configisvalid=false;
-                console.log('"usecount" was found to be invalid and was set to default');
-            }
-        }else{
-            this.data.usecount=1;
+        if(typeof(this.data.first_use)!='undefined'){
+            this.data.first_use=true;
             configisvalid=false;
-            console.log('"usecount" did not exist and was set to default');
+            console.log('First use could not be determined');
         }
         
         if(!configisvalid){
@@ -124,6 +122,27 @@ var config = {//Configuration handler
     }
 }
 
+var server_handler = {/*    A fake server for the purpose of development, do not depend on the speed of this    */
+
+}
+
+UI = {
+    initalize:function(){
+        //document.getElementById('email_put').focus();
+        document.getElementById('login_nav').addEventListener('click',()=>{
+            document.getElementById('decsion_screen').style.display='none';
+            document.getElementById('log_in_screen').style.display='block';
+            document.getElementById('email_put').focus();
+            app.toast('Login selected',5000);
+        });
+        document.getElementById('signup_nav').addEventListener('click',()=>{
+            document.getElementById('decsion_screen').style.display='none';
+            document.getElementById('Sign_up_screen').style.display='block';
+            app.toast('Sign-up selected',5000);
+        });
+    },
+}
+
 function close_loading(){
     document.getElementById('page_shade').style.backgroundColor="rgba(0,0,0,0)";
     setTimeout(()=>{
@@ -131,15 +150,3 @@ function close_loading(){
     },1000);
 }
 
-let login = {
-    initalize:function(){
-        document.getElementById('login_btn').addEventListener('click',()=>{
-            document.getElementById('login_btn').className="swapbtn_active";
-            document.getElementById('signup_btn').className="swapbtn";
-        });
-        document.getElementById('signup_btn').addEventListener('click',()=>{
-            document.getElementById('login_btn').className="swapbtn";
-            document.getElementById('signup_btn').className="swapbtn_active";
-        });
-    },
-}
