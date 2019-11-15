@@ -13,7 +13,7 @@
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
-        background-image: url('../img/placeholder.webp');
+        background-image: url('../img/background.webp');
     }
     #page_shade{
         position: fixed;

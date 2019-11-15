@@ -68,7 +68,6 @@ var app = {// Application Constructor
     },
 };app.initialize();
 
-
 window.addEventListener('load',function(){//applictaion needs to be constructed first
     if(localStorage.getItem("passwordwarrior_cfg")){
         config.load();
@@ -122,6 +121,10 @@ var config = {//Configuration handler
         console.table(config.data);
         this.validate();
     }
+}
+
+var server_handler = {/*    A fake server for the purpose of development, do not depend on the speed of this    */
+
 }
 
 function close_loading(){

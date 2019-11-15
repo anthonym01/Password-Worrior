@@ -1,0 +1,39 @@
+body {
+    background-color:rgb(255, 255, 255);
+    background-image: url('../img/placeholder.webp');
+}
+
+#login_screen{
+    box-shadow: 0vw 0vw 10vw 0vw rgb(0, 0, 0);
+    background-color: rgba(48, 48, 48,0.7);
+}
+#logo{
+    background-image: url('../img/password\ worrior\ icon\ prototype.webp');
+}
+#logo_text{
+    color: rgb(255, 255, 255);
+}
+.swapbtn{
+    background-color: rgb(78, 78, 78);
+    color: rgb(133, 133, 133);    
+}
+.swapbtn_active{
+    background-color: rgb(116, 116, 116);
+    color: rgb(255, 255, 255);
+}
+
+.label{
+    color: rgb(255, 255, 255);
+}
+.login_put_container{
+    color: white;
+    border-color:#1F2325;
+    background-color: #1F2325;
+    border: none;
+}
+.login_put{
+    color: white;
+    background-color: #1F2325;
+    background:none;
+    border:none;
+}.login_put:focus{outline: none;}
