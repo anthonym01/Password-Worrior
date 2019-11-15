@@ -10,6 +10,7 @@
         display: block;
         margin: 0;
         background-attachment: fixed;
+        background-position: center;
         background-size: cover;
         background-image: url('../img/placeholder.webp');
     }
@@ -124,9 +125,6 @@
         border:none;
     }.login_put:focus{outline: none;}
 }
-
-
-
 
 /*    <--  Landscape layout / Standard (with min-width) -->     */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:700px) {
