@@ -1,8 +1,8 @@
 {
-  "name": "blank_app",
-  "displayName": "Blank_App",
+  "name": "passwordwarrior",
+  "displayName": "Password Warrior",
   "version": "1.0.0",
-  "description": "A Blank AF application.",
+  "description": "Password managing application",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,6 +13,7 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "dependencies": {
+    "cordova": "^9.0.0",
     "cordova-android": "^8.0.0",
     "cordova-plugin-x-toast": "^2.7.2",
     "electron": "^7.1.1"
