@@ -1,2 +1,4 @@
 # Password-Worrior
-A password manager
+A Web based password
+
+https://anthonym01.github.io/Password-Worrior/
